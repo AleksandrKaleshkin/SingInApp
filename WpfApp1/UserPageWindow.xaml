@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp1.UserPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="400" Width="600">
+    <Grid Background="Beige">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="Gray"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Кабинет пользователя" FontSize="20" FontWeight="DemiBold"></TextBlock>
+                    <ListView x:Name="listOfUsers" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text= "{Binding Login}" FontWeight ="Bold"/>
+                                <TextBlock Text= ","/>
+                                <TextBlock Text= "{Binding Email}" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    </ListView>
+            </StackPanel>
+            
+        </Border>
+    </Grid>
+</Window>
